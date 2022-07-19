@@ -1,0 +1,127 @@
+
+/* NOTIFICATION NOTIFICATION NOTIFICATION NOTIFICATION NOTIFICATION NOTIFICATION NOTIFICATION NOTIFICATION NOTIFICATION */
+
+/* Main Header Div */
+.notif--header {
+    margin-bottom: 20px;
+}
+
+/* Main Header Text */
+.notif--header--name {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+
+
+
+
+
+/* EACH NOTIFICATION STYLING */
+/* Notification div */
+.notif--container {
+    display: flex;
+    align-items: center;
+    margin: 0px 10px;
+    /* border: solid 1px red; */
+}
+
+/* Div that contains notification text */
+.notif--text--container {
+    display: flex;
+    align-items: baseline;
+    margin-right: auto;
+    max-width: 90vw;
+    font-size: 0.9rem;
+    /* border: solid 1px red; */
+}
+
+.text--notif {
+    padding: 0;
+    /* border: solid 1px red; */
+}
+
+
+/* Username PIC attached to Notification */
+.pic--notif {
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    border: 2px solid #000000;
+    border-radius: 5px;
+}
+
+/* Styles each username link */
+.username--button {
+    padding-left: 0px;
+    height: 30px;
+    align-self: center;
+    font-weight: 700;
+    color:--ion-text-color;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    --padding-top: 0;
+    --padding-bottom: 0;
+    --padding-start: 0;
+    --padding-end: 0;
+        border: solid 1px red;
+}
+
+/* sets align left */
+.notif--user {
+    font-size: 0.9rem;
+    text-align: left;
+    max-width: 28vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+/* Username USERNAME attached to Notification */
+/* .username--notif {
+    font-weight: 700;
+    padding: 0;
+    margin: 0;
+    margin-right: 5px;
+    font-size: 1rem;
+} */
+
+/* FOllOW notification button */
+.button--notif--follow {
+    height: 30px;
+    width: 80px;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    background: #ED502D;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 3px 3px 0px black;
+    --padding-top: 0;
+    --padding-bottom: 0;
+    --padding-start: 0;
+    --padding-end: 0;
+}
+
+.button--notif--follow.following {
+    background: #07A168;
+}
+
+
+/* when clicked */
+.button--notif--follow:active, .button--notif--following:active {
+    box-shadow: 1px 1px 0px #000000;
+}
+
+
+
+/* LIKES LIKES LIKES */
+
+.likes--username {
+    max-width: 70vw;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

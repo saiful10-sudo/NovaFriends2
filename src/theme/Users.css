@@ -1,0 +1,46 @@
+
+/* USERS USERS USERS (located by clicking the DISCOVER Page top right purple button */
+
+
+/* Title/Header */
+.user--header {
+    margin-bottom: 20px;
+}
+
+/* Styling the text */
+.users--header--name {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+
+/* Each user styling container */
+.users--container {
+    display: flex;
+    align-items: center;
+    margin: 0px 10px;
+}
+
+/* User name container */
+.users--text--container {
+    display: flex;
+    align-items: baseline;
+}
+
+/* User picture */
+.pic--users {
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    border: 2px solid #000000;
+    border-radius: 5px;
+}
+
+/* STYLES LINK TO THE USER'S PAGE */
+.users--button {
+    padding: 0;
+    height: 30px;
+    align-self: center;
+    font-weight: 700;
+    color: --ion-primary-color;
+}

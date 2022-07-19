@@ -1,0 +1,90 @@
+/* Contains CSS for any elements that are unique to the Post page, which is mainly styling the comments */
+
+/* Entire Post */
+.post--container {
+    margin-bottom: 30px;
+}
+
+/* COMMENT Container */
+.comment--container {
+    display: grid;
+    grid-template-areas: 
+    "pic username time"
+    "pic comment comment";
+    margin: 0px 15px 20px 15px;
+}
+
+/* PICTURE Wrapper*/
+.pic--wrapper {
+    grid-area: pic;
+    display: flex;
+    margin: 0px;
+    padding: 0;
+}
+
+/* Actual PICTURE */
+.pic--comment {
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 2px solid #000000;
+}
+
+/* USERNAME Wrapper */
+.post--username--container {
+    grid-area: username;
+    display: flex;
+}
+
+/* USERNAME BUTTON LINK associated with comment  */
+.post--username {
+    text-align: left;
+    height: 20px;
+    font-weight: 700;
+}
+
+.post--username span {
+    text-align: left;
+    max-width: 50vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Styling various nested elements */
+.post--username h1, .time p, .comment p {
+    margin: 0;
+    padding: 0;
+    align-self: center;
+    font-size: 1rem;
+}
+
+/* TIME STAMP */
+.time {
+    grid-area: time;
+    display: flex;
+    justify-content: right;
+    /* border: solid 1px red; */
+}
+
+/* COMMENT TEXT */
+.comment {
+    grid-area: comment;
+    display: flex;
+    margin-left: 20px;
+}
+
+/* TIME STAMP TEXT */
+.time p {
+    font-weight: 400;
+    font-size: 0.75rem;
+    color: #AAA9A9;
+}
+
+
+
+
+
+
+
+
