@@ -44,8 +44,8 @@ const Home: React.FC = () => {
         <IonToolbar>
           <IonTitle className="home--header--name">Your Feed</IonTitle>
           <IonButtons className="home--btn--container" slot="primary">
-            <IonButton color="dark">
-                <IonIcon size="large" slot="start" icon={cameraOutline} />
+            <IonButton routerLink="/postimage" color="dark">
+                <IonIcon size="large" slot="start" icon={cameraOutline}/>
             </IonButton>
             <IonButton routerLink="/notifications" color="dark">
                 <IonIcon size="large" slot="end" icon={heartOutline} />

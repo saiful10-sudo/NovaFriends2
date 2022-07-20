@@ -10,6 +10,7 @@ import {
 } from '@ionic/react';
 import { homeOutline, globeOutline, personOutline} from 'ionicons/icons';
 
+
 import Home from '../pages/d.Home';
 import Discover from '../pages/e.Discover';
 import Profile from '../pages/f.Profile';
@@ -18,6 +19,7 @@ import Post from '../components/PostLarge';
 import Users from '../pages/UsersList';
 import UserProfile from '../pages/UserProfile';
 import Notifications from '../pages/Notifications';
+import PostImage from '../pages/PostImage';
 import Settings from '../pages/Settings/Settings';
 
 
@@ -47,6 +49,10 @@ const TabRoot: React.FC = () => (
 
           <Route exact path="/notifications">
             <Notifications />
+          </Route>
+
+          <Route exact path="/postimage">
+            <PostImage />
           </Route>
 
           <Route exact path="/likes">
