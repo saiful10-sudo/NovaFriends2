@@ -4,8 +4,7 @@ import {updateEmail} from "firebase/auth";
 
 
   export default function UpdateEmail(prop) {
-    updateEmail(auth.currentUser, "user@example.com").then(() => {
-        console.log(prop)
+    updateEmail(auth.currentUser, prop).then(() => {
       }).catch((error) => {
         console.log("failed")
       });

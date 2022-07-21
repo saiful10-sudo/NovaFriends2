@@ -3,26 +3,32 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonBu
 import {chevronBackOutline} from 'ionicons/icons';
 import '../../theme/Notifications-Likes.css';
 
+
+import {useHistory} from 'react-router-dom';
+
 import {auth} from '../firebase-config'
-import {signOut, updatePassword} from "firebase/auth";
-import { useHistory } from 'react-router';
-import { useState } from 'react';
+import {signOut} from "firebase/auth";
+import {useState} from 'react';
+
 import UpdatePassword from '../../components/Settings/UpdatePassword';
 import UpdateEmail from '../../components/Settings/UpdateEmail';
 import DeleteUser from '../../components/Settings/DeleteUser';
+import { ChangeDisplayPic } from '../../components/Settings/ChangeInfo';
 
 
 const Settings: React.FC = () => {
 
   const router = useIonRouter()
   const history = useHistory()
-  const user = auth.currentUser;
   const [newPassword, setNewPassword] = useState('')
   const [newEmail, setNewEmail] = useState('')
+
+
 
   function SignOut() {
     signOut(auth).then(() => {
       history.replace('./login')
+      localStorage.clear();
     }).catch((error) => {
     });
   }
@@ -34,10 +40,11 @@ const Settings: React.FC = () => {
   function runUpdateEmail() {
     UpdateEmail(newEmail)
   }
- 
 
+  function runChangeDisplayPic() {
+    ChangeDisplayPic()
+  }
  
-
 
   
   return (
@@ -66,9 +73,10 @@ const Settings: React.FC = () => {
           <IonLabel position="floating">New Email</IonLabel>
           <IonInput onIonChange={e => setNewEmail(e.detail.value!)} />
           
+          <IonButton className="login--button page" onClick={runChangeDisplayPic} fill='clear'>Change Pic</IonButton>
           <IonButton className="login--button page" onClick={runUpdatePassword} fill='clear'>Update Password</IonButton>
           <IonButton className="login--button page" onClick={runUpdateEmail} fill='clear'>Update Email</IonButton>
-          <IonButton className="login--button page" onClick={SignOut} fill='clear'>SignOut</IonButton>
+          <IonButton className="login--button page" onClick={SignOut} fill='clear'>Sign Out</IonButton>
           <IonButton className="login--button page" onClick={DeleteUser} fill='clear'>DeleteAccount</IonButton>
       </IonContent>
     </IonPage>

@@ -11,9 +11,9 @@ import {
 import { homeOutline, globeOutline, personOutline} from 'ionicons/icons';
 
 
-import Home from '../pages/d.Home';
-import Discover from '../pages/e.Discover';
-import Profile from '../pages/f.Profile';
+import Home from '../pages/Home';
+import Discover from '../pages/Discover';
+import Profile from '../pages/Profile';
 import Likes from '../pages/Likes';
 import Post from '../components/PostLarge';
 import Users from '../pages/UsersList';
@@ -27,23 +27,24 @@ import Settings from '../pages/Settings/Settings';
 setupIonicReact();
 
 // TabRoot
-const TabRoot: React.FC = () => (
-    <IonTabs>
-        <IonRouterOutlet>
+const HomeRoot: React.FC = () => (
 
+    <IonTabs>
+
+      <IonRouterOutlet>
           <Route exact path="/">
-            <Redirect to="/d.home" />
+            <Redirect to="/home" />
           </Route>
 
-          <Route exact path="/d.home">
+          <Route exact path="/home">
             <Home />
           </Route>
 
-          <Route exact path="/e.discover">
+          <Route exact path="/discover">
             <Discover />
           </Route>
 
-          <Route exact path="/f.profile">
+          <Route exact path="/profile">
             <Profile />
           </Route>
 
@@ -74,26 +75,21 @@ const TabRoot: React.FC = () => (
           <Route exact path="/settings">
             <Settings />
           </Route>
-
-
-        </IonRouterOutlet>
-
-
-
+      </IonRouterOutlet>
 
       <IonTabBar slot="bottom">
           
-          <IonTabButton tab="home" href="/d.home">
+          <IonTabButton tab="home" href="/home">
             <IonIcon icon={homeOutline} />
             <IonLabel>Home</IonLabel>
           </IonTabButton>
 
-          <IonTabButton tab="discover" href="/e.discover">
+          <IonTabButton tab="discover" href="/discover">
             <IonIcon icon={globeOutline} />
             <IonLabel>Discover</IonLabel>
           </IonTabButton>
 
-          <IonTabButton tab="profile" href="/f.profile">
+          <IonTabButton tab="profile" href="/profile">
             <IonIcon icon={personOutline} />
             <IonLabel>Profile</IonLabel>
           </IonTabButton>
@@ -101,6 +97,7 @@ const TabRoot: React.FC = () => (
         </IonTabBar>
 
     </IonTabs>
+  
   );
 
-  export default TabRoot
+  export default HomeRoot

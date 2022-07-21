@@ -1,10 +1,10 @@
 
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore/lite";
-import { getAuth } from "firebase/auth";
+import { getAuth, setPersistence, browserSessionPersistence } from "firebase/auth";
 
 
-const firebaseConfig = {
+export const firebaseConfig = {
   apiKey: "AIzaSyBiXtt-KZBFYJPHrzyB45jtGxaJf62pWyU",
   authDomain: "novafriends-3cb8c.firebaseapp.com",
   projectId: "novafriends-3cb8c",

@@ -4,6 +4,10 @@ import FirstPage from '../pages/Authentication/FirstPage'
 import Login from '../pages/Authentication/Login';
 import Register from '../pages/Authentication/Register'
 import Username from '../pages/Authentication/Username';
+import Home from '../pages/Home'
+
+
+
 import ForgotPasswordPage from '../pages/Authentication/ForgotPassword'
 import { useState, useEffect } from 'react';
 import { auth } from '../pages/firebase-config';
@@ -17,20 +21,10 @@ setupIonicReact();
 
 const LoginRoot: React.FC = () => {
   
-const [route, setRoute] = useState("")
+const [route, setRoute] = useState("/firstpage")
 
-useEffect(() => {
-  onAuthStateChanged(auth, (currentUser: any) => {
-    if (currentUser) {
-      setRoute("/d.Home")
-    } else {
-      setRoute("/firstpage")
-    }
-  });
-}, []);
-  
+ 
   return (
-
         <IonRouterOutlet>
           <Route exact path="/">
             <Redirect to={route} />
@@ -55,7 +49,6 @@ useEffect(() => {
           <Route exact path="/forgotpasswordpage">
             <ForgotPasswordPage />
           </Route>
-
         </IonRouterOutlet>
 )}
 

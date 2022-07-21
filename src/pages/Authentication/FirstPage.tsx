@@ -14,8 +14,9 @@ const Login: React.FC = () => {
           <div className="page--container">
           <img className="logo" src="assets/images/Logo.svg" />
               <IonButton className="login--button one" fill='clear' routerLink="/login">Login</IonButton>
-              <IonButton className="login--button two" fill='clear' routerLink="/register">Register</IonButton>
+              <IonButton className="login--button two" fill='clear' routerLink="/register">Register!</IonButton>
           </div>
+          <img className="logo" src="assets/images/FirstPage.svg" />
       </IonContent>
     </IonPage>
   );

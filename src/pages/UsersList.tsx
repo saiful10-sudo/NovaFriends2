@@ -16,7 +16,7 @@ const Users: React.FC = () => {
           <IonTitle className="users--header--name">Users
           </IonTitle>
             <IonButtons className="users--btn--container" slot="secondary">
-                <IonButton routerLink="/e.discover" routerDirection="back" color="dark">
+                <IonButton routerLink="/discover" routerDirection="back" color="dark">
                     <IonIcon size="large" slot="start" icon={chevronBackOutline} />
                 </IonButton>
             </IonButtons>

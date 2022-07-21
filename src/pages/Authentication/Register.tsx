@@ -14,6 +14,9 @@ import ErrorText from '../../components/ErrorText';
 
 
 
+
+
+
 const Register: React.FC = () => {
 
   const [registerEmail, SetRegisterEmail] = useState("")
@@ -32,9 +35,12 @@ const Register: React.FC = () => {
     createUserWithEmailAndPassword(auth, registerEmail, registerPassword)
     .then((userCredential) => {
     const user = userCredential.user;
-    RegisterUsername(registerUsername)
-    SendVerification()
-    history.replace('../d.Home')
+    if (user) {
+      history.replace('/Home')
+      RegisterUsername(registerUsername)
+      SendVerification()
+    }
+    
     })
     .catch((error) => {
     const errorCode = error.code;
@@ -88,7 +94,7 @@ return (
           <ErrorText error={error} />
         </div>
         <div className='page--container'>
-          <IonButton className="login--button two" onClick={Register} fill='clear'>Register</IonButton>
+          <IonButton className="login--button two" onClick={Register} fill='clear'>Register!</IonButton>
           <div className='small--container'>
             <p>or</p>
             <a className="login--button--small" href='/login'>Login</a>

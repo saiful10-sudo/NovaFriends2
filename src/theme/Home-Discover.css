@@ -166,14 +166,15 @@
     font-size: 1rem;
     font-weight: 700;
     text-transform: capitalize;
-    background: #ED502D;
+    background: #F87474;
     border: 2px solid #000000;
     border-radius: 10px;
     box-shadow: 3px 3px 0px #000000;
 }
 
 .discover--button.users {
-    background: #5521ED;
+    color: black;
+    background: #F9F2ED;
 }
 
 .discover--button:active {

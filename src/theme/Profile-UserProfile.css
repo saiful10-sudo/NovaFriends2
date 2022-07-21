@@ -112,7 +112,8 @@
 
 /* Changes the color just for your profile page */
 .profile--button.you {
-    background: #5521ED;
+    color: black;
+    background: #F9F2ED;
 }
 
 .profile--button:active {

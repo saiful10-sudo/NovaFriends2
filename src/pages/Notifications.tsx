@@ -47,7 +47,7 @@ const Notifications: React.FC = () => {
 
                 <div className="notif--text--container">
                     <IonButton routerLink="/UserProfile" fill="clear" className="username--button">
-                        <span className="notif--user">@bengorskiiiiiii</span>
+                        <span className="notif--user">@bengorski</span>
                     </IonButton>
                     <p className="text--notif">followed you</p>
                 </div>
@@ -62,7 +62,7 @@ const Notifications: React.FC = () => {
             <img className="pic--notif" src="assets/images/small-pic.jpeg" />
             <div className="notif--text--container">
                 <IonButton routerLink="/UserProfile" fill="clear" className="username--button">
-                    <span className="notif--user">@elonmusk</span>
+                    <span className="notif--user">@bengorski</span>
                 </IonButton>
                 <p className="text--notif">commented on your post</p>
             </div>
@@ -74,7 +74,7 @@ const Notifications: React.FC = () => {
             <img className="pic--notif" src="assets/images/small-pic.jpeg" />
             <div className="notif--text--container">
                 <IonButton routerLink="/UserProfile" fill="clear" className="username--button">
-                    <span className="notif--user">@elonmusk</span>
+                    <span className="notif--user">@bengorski</span>
                 </IonButton>
                 <p className="text--notif">liked your post</p>
             </div>

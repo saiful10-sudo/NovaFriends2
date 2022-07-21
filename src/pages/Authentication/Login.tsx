@@ -1,53 +1,49 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {useHistory} from 'react-router-dom';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonInput, IonItem, IonLabel, IonList, IonButtons, IonButton } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonInput, IonItem, IonLabel, IonList, IonButton, useIonToast } from '@ionic/react';
 import '../../theme/Login.css';
 import {auth} from '../firebase-config'
-import {signInWithEmailAndPassword,onAuthStateChanged} from "firebase/auth";
+import {signInWithEmailAndPassword} from "firebase/auth";
 import ErrorText from '../../components/ErrorText';
+
 
 
 
 
 const Login: React.FC = () => {
 
-  
-
   const [loginEmail, SetLoginEmail] = useState("")
   const [loginPassword, SetLoginPassword] = useState("")
-
-  const [user, setUser] = useState({})
-
   const [error, SetError] = useState("")
-
+  const [signingIn, setSigningIn] = useState(false)
   const history = useHistory()
 
-  const [signingIn, setSigningIn] = useState(false)
 
-  const [loggedIn, setLoggedIn] = useState(false)
+  
 
-
+  
 
   function SignIn() {
     if (error !== '') SetError('');
-
     setSigningIn(true)
 
     signInWithEmailAndPassword(auth, loginEmail, loginPassword)
-  .then((userCredential) => {
-    const user = userCredential.user;
-    setLoggedIn(true)
-    history.replace('../d.home')
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
+    .then((userCredential) => {
+    if (userCredential){
+      history.replace('/home')
+    }   
+    })
+    .catch((error) => {
     setSigningIn(false)
     SetError('Unable to sign in. Please try again.')
-  });
+    });
   }
+  
+
+ 
 
   
+
 
   return (
     <IonPage>
@@ -69,6 +65,7 @@ const Login: React.FC = () => {
           </IonItem>
         </IonList>
 
+
         <div className="error--text">
           <ErrorText error={error} />
         </div>
@@ -84,6 +81,8 @@ const Login: React.FC = () => {
     </IonPage>
   );
 };
+
+
 
 
 export default Login

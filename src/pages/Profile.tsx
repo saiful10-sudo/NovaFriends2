@@ -1,9 +1,13 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonImg } from '@ionic/react';
+import { usePhotoGallery, UserPhoto } from '../components/usePhotoGallery';
 import {settingsOutline} from 'ionicons/icons';
 import '../theme/Profile-UserProfile.css';
 import {auth} from './firebase-config'
 
 const Profile: React.FC = () => {
+
+  const profilePic = auth.currentUser?.photoURL!
+
   return (
     <IonPage>
 
@@ -30,7 +34,7 @@ const Profile: React.FC = () => {
 
             {/* Div for the main profile pic */}
             <div className="profile--pic--container">
-              <img className="profile--pic" src="assets/images/headshot.jpeg" alt="" />
+              <IonImg src={profilePic} />
             </div>
 
             {/* Following */}
